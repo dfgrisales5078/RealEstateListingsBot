@@ -12,4 +12,7 @@ class Bot:
     def close_webpage(self):
         self.driver.close()
 
+    def find_search_box(self):
+        pass
+
     # def search_properties(self, city, home_type, max_price):
