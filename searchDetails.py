@@ -1,16 +1,17 @@
 class SearchDetails:
     def __init__(self):
         self.search_query = {
-            'city_or_zipcode': '',
+            'city': '',
             'min_price': 0,
             'max_price': 0,
             'property_type': 'any'
         }
 
-    def set_city_or_zipcode(self):
-        self.search_query['city_or_zipcode'] = input(
-            'Enter the city or zipcode (e.g.: Estero): ').lower()
-        return self.search_query['city_or_zipcode']
+    def set_city(self):
+        self.search_query['city'] = input(
+            'Enter the city (e.g.: Estero): ').lower()
+        self.search_query['city'].replace(' ', '-')
+        return self.search_query['city']
 
     def set_min_price(self):
         self.search_query['min_price'] = int(input(
@@ -38,6 +39,3 @@ class SearchDetails:
                 return self.search_query['property_type']
             else:
                 print('Invalid property type entered, please try again. ')
-
-
-    # def set_page_to_search(self):
