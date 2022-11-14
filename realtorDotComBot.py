@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
+from bs4 import BeautifulSoup
 
 
 class RealtorDotComBot(Bot):
@@ -31,4 +32,6 @@ class RealtorDotComBot(Bot):
 
     # TODO
     def get_listings(self):
-        pass
+        listings = self.driver.find_element(
+            By.XPATH, '/html/body/div[1]/div[4]/section[1]')
+        print(listings.text)

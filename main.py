@@ -30,8 +30,10 @@ if __name__ == '__main__':
             break
 
     driver = webdriver.Firefox()
-    # realtor_dot_com_bot = RealtorDotComBot(driver, city, minimum_price, maximum_price, property_type)
-    # realtor_dot_com_bot.open_webpage()
+    realtor_dot_com_bot = RealtorDotComBot(driver, city, minimum_price, maximum_price, property_type)
+    realtor_dot_com_bot.open_webpage()
+    realtor_dot_com_bot.get_listings()
 
-    trulia_bot = TruliaBot(driver, city, minimum_price, maximum_price, property_type)
-    trulia_bot.open_webpage()
+    # diver2 = webdriver.Firefox()
+    # trulia_bot = TruliaBot(diver2, city, minimum_price, maximum_price, property_type)
+    # trulia_bot.open_webpage()
