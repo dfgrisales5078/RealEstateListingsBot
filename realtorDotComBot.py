@@ -1,5 +1,5 @@
 from selenium.common import NoSuchElementException
-from bot import Bot
+from botPrototype import BotPrototype
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions
 from bs4 import BeautifulSoup
 
 
-class RealtorDotComBot(Bot):
+class RealtorDotComBot(BotPrototype):
     def __init__(self, driver, city, minimum_price, maximum_price, property_type):
         super().__init__(driver, city, minimum_price, maximum_price, property_type)
 
@@ -16,7 +16,7 @@ class RealtorDotComBot(Bot):
         assert "Page not found" not in self.driver.page_source
 
     def close_webpage(self):
-        pass
+        self.driver.close()
 
     def set_property_type(self):
         if self.property_type == 'apartment':
@@ -35,3 +35,5 @@ class RealtorDotComBot(Bot):
         listings = self.driver.find_element(
             By.XPATH, '/html/body/div[1]/div[4]/section[1]')
         print(listings.text)
+        # TODO
+        # return listings.text

@@ -1,5 +1,5 @@
 from selenium.common import NoSuchElementException
-from bot import Bot
+from botPrototype import BotPrototype
 from time import sleep
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -8,7 +8,7 @@ from selenium.webdriver.support import expected_conditions
 from bs4 import BeautifulSoup
 
 
-class TruliaBot(Bot):
+class TruliaBot(BotPrototype):
     def __init__(self, driver, city, minimum_price, maximum_price, property_type):
         super().__init__(driver, city, minimum_price, maximum_price, property_type)
 
@@ -17,7 +17,7 @@ class TruliaBot(Bot):
         assert "Page not found" not in self.driver.page_source
 
     def close_webpage(self):
-        pass
+        self.driver.close()
 
     def set_property_type(self):
         if self.property_type == 'apartment':
@@ -34,8 +34,9 @@ class TruliaBot(Bot):
         return f'https://www.trulia.com/for_sale/{self.city},FL/{self.minimum_price}-{self.maximum_price}_price' \
                f'/{self.set_property_type()}_type/ '
 
-    # TODO
     def get_listings(self):
         listings = self.driver.find_element(
             By.XPATH, '//*[@id="resultsColumn"]/div[1]/ul')
         print(listings.text)
+        # TODO
+        # return listings.text

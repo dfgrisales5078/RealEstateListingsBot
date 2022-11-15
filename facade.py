@@ -14,10 +14,10 @@ class Facade:
 
     def get_search_information(self):
         self.search_details = SearchDetails()
-        self.city = self.search_details.set_city()
-        self.minimum_price = self.search_details.set_min_price()
-        self.maximum_price = self.search_details.set_max_price()
-        self.property_type = self.search_details.set_property_type()
+        self.city = self.search_details.city_query()
+        self.minimum_price = self.search_details.min_price_query()
+        self.maximum_price = self.search_details.max_price_query()
+        self.property_type = self.search_details.property_type_query()
 
     def comfirm_user_input(self):
         details_confirmation = False
