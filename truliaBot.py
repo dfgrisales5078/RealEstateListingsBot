@@ -34,9 +34,7 @@ class TruliaBot(BotPrototype):
         return f'https://www.trulia.com/for_sale/{self.city},FL/{self.minimum_price}-{self.maximum_price}_price' \
                f'/{self.set_property_type()}_type/ '
 
-    def get_listings(self):
+    def get_listings(self) -> str:
         listings = self.driver.find_element(
             By.XPATH, '//*[@id="resultsColumn"]/div[1]/ul')
-        print(listings.text)
-        # TODO
-        # return listings.text
+        return listings.text
