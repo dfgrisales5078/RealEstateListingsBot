@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class BotPrototype(ABC):
     def __init__(self, driver, city, minimum_price, maximum_price, property_type):
         self.driver = driver
