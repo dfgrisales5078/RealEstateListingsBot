@@ -1,13 +1,14 @@
-from webcrawlerPrototype import WebcrawlerPrototype
 from selenium.webdriver.common.by import By
+from webcrawlerPrototype import WebcrawlerPrototype
 
 
 class RealtorDotComWebcrawler(WebcrawlerPrototype):
     def __init__(self, driver, city, minimum_price, maximum_price, property_type):
         super().__init__(driver, city, minimum_price, maximum_price, property_type)
 
-    def open_webpage(self):
+    def open_webpage(self, date):
         self.driver.get(self.get_formatted_url())
+        self.driver.save_screenshot("realtor-screenshot.png")
         assert "Page not found" not in self.driver.page_source
 
     def close_webpage(self):

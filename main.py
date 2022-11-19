@@ -1,5 +1,6 @@
 from facade import Facade
 
+
 if __name__ == '__main__':
     while True:
         search_decision = input('Enter 1 to search realtor.com or 2 to search trulia.com: ')

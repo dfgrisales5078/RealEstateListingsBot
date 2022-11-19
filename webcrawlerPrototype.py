@@ -11,7 +11,7 @@ class WebcrawlerPrototype(ABC):
         self.url = None
 
     @abstractmethod
-    def open_webpage(self):
+    def open_webpage(self, date):
         pass
 
     @abstractmethod
@@ -29,5 +29,3 @@ class WebcrawlerPrototype(ABC):
     @abstractmethod
     def get_listings(self):
         pass
-
-

@@ -20,7 +20,7 @@ class DataFormatter:
         with open('data.txt', 'w') as data_file:
             data_file.write(data)
 
-        with open(f'realtor-listings-{date[:10]}.txt', 'a+') as listings_file:
+        with open(f'realtor-listings-{date[:10]}.txt', 'w') as listings_file:
             with open('data.txt', 'r+') as data_file:
                 for line in data_file.readlines():
                     if line.startswith('NEW') or line.startswith('Brokered') or line.startswith('Email'):
