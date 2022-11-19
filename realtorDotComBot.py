@@ -25,7 +25,9 @@ class RealtorDotComBot(BotPrototype):
         return f'https://www.realtor.com/realestateandhomes-search/{self.city}_Fl/' \
                f'type-{self.set_property_type()}/price-{self.minimum_price}-{self.maximum_price}'
 
-    def get_listings(self):
+    def get_listings(self) -> str:
         listings = self.driver.find_element(
             By.XPATH, '/html/body/div[1]/div[4]/section[1]')
+
+        print(listings.text)
         return listings.text

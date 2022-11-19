@@ -29,3 +29,5 @@ class BotPrototype(ABC):
     @abstractmethod
     def get_listings(self):
         pass
+
+

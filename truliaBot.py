@@ -31,4 +31,6 @@ class TruliaBot(BotPrototype):
     def get_listings(self) -> str:
         listings = self.driver.find_element(
             By.XPATH, '//*[@id="resultsColumn"]/div[1]/ul')
+
+        print(listings.text)
         return listings.text

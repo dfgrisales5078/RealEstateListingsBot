@@ -2,15 +2,18 @@ from selenium import webdriver
 from truliaBot import TruliaBot
 from realtorDotComBot import RealtorDotComBot
 from searchDetails import SearchDetails
-
+from formatData import DataFormatter
+from datetime import datetime
 
 class Facade:
     def __init__(self):
         self.search_details = SearchDetails()
+        self.data_formatter = DataFormatter()
         self.city = None
         self.minimum_price = None
         self.maximum_price = None
         self.property_type = None
+        self.date = str(datetime.today())
 
     def get_search_information(self):
         self.search_details = SearchDetails()
@@ -57,12 +60,14 @@ class Facade:
         driver.close()
         return listings
 
-    def run_realtor_bot(self) -> str:
+    def run_realtor_bot(self):
         self.get_search_information()
         self.confirm_user_input()
-        return self.get_realtor_listings()
+        data = self.get_realtor_listings()
+        self.data_formatter.format_realtor_dot_com_data(data, self.date)
 
-    def run_trulia_bot(self) -> str:
+    def run_trulia_bot(self):
         self.get_search_information()
         self.confirm_user_input()
-        return self.get_trulia_listings()
+        data = self.get_trulia_listings()
+        self.data_formatter.format_trulia_data(data, self.date)
