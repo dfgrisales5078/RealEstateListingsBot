@@ -1,8 +1,8 @@
-from botPrototype import BotPrototype
+from webcrawlerPrototype import WebcrawlerPrototype
 from selenium.webdriver.common.by import By
 
 
-class TruliaBot(BotPrototype):
+class TruliaWebcrawler(WebcrawlerPrototype):
     def __init__(self, driver, city, minimum_price, maximum_price, property_type):
         super().__init__(driver, city, minimum_price, maximum_price, property_type)
 

@@ -1,6 +1,6 @@
 from selenium import webdriver
-from truliaBot import TruliaBot
-from realtorDotComBot import RealtorDotComBot
+from truliaWebcrawler import TruliaWebcrawler
+from realtorDotComWebcrawler import RealtorDotComWebcrawler
 from searchDetails import SearchDetails
 from formatData import DataFormatter
 from datetime import datetime
@@ -44,8 +44,8 @@ class Facade:
 
     def get_realtor_listings(self) -> str:
         driver = webdriver.Firefox()
-        realtor_dot_com_bot = RealtorDotComBot(driver, self.city, self.minimum_price, self.maximum_price,
-                                               self.property_type)
+        realtor_dot_com_bot = RealtorDotComWebcrawler(driver, self.city, self.minimum_price, self.maximum_price,
+                                                      self.property_type)
         realtor_dot_com_bot.open_webpage()
         listings = realtor_dot_com_bot.get_listings()
         driver.close()
@@ -53,8 +53,8 @@ class Facade:
 
     def get_trulia_listings(self) -> str:
         driver = webdriver.Firefox()
-        trulia_bot = TruliaBot(driver, self.city, self.minimum_price, self.maximum_price,
-                               self.property_type)
+        trulia_bot = TruliaWebcrawler(driver, self.city, self.minimum_price, self.maximum_price,
+                                      self.property_type)
         trulia_bot.open_webpage()
         listings = trulia_bot.get_listings()
         driver.close()

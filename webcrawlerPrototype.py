@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class BotPrototype(ABC):
+class WebcrawlerPrototype(ABC):
     def __init__(self, driver, city, minimum_price, maximum_price, property_type):
         self.driver = driver
         self.city = city
