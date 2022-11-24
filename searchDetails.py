@@ -7,18 +7,18 @@ class SearchDetails:
             'property_type': 'any'
         }
 
-    def city_query(self):
+    def city_query(self) -> str:
         self.search_query['city'] = input(
             'Enter the city (e.g.: Estero): ').lower()
         self.search_query['city'].replace(' ', '-')
         return self.search_query['city']
 
-    def min_price_query(self):
+    def min_price_query(self) -> int:
         self.search_query['min_price'] = int(input(
             'Enter the minimum price (e.g.: 400,000): '))
         return self.search_query['min_price']
 
-    def max_price_query(self):
+    def max_price_query(self) -> int:
         while True:
             self.search_query['max_price'] = int(input(
                 'Enter the maximum price (e.g.: 1,000,000): '))
@@ -28,7 +28,7 @@ class SearchDetails:
                 print('Maximum price must be higher than minimum price. \n')
         return self.search_query['max_price']
 
-    def property_type_query(self):
+    def property_type_query(self) -> str:
         property_types = ['apartment', 'townhome', 'house', 'any']
 
         while True:

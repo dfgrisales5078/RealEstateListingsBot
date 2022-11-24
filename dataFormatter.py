@@ -1,6 +1,6 @@
 class DataFormatter:
     @staticmethod
-    def format_trulia_data(data, date):
+    def format_trulia_data(data, date) -> None:
         with open('data.txt', 'w') as data_file:
             data_file.write(data)
 
@@ -16,7 +16,7 @@ class DataFormatter:
                         listings_file.write(line)
 
     @staticmethod
-    def format_realtor_dot_com_data(data, date):
+    def format_realtor_dot_com_data(data, date) -> None:
         with open('data.txt', 'w') as data_file:
             data_file.write(data)
 
