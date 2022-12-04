@@ -9,4 +9,4 @@ facade design
 pattern to hide complexity and to simplify the main function.
 
 ## Class Diagram:
-![alt text](UMLclass.png)
+![alt text](UMLDiagram.png)
