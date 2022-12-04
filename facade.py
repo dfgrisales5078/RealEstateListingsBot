@@ -70,19 +70,19 @@ class Facade:
         driver.close()
         return listings
 
-    def run_realtor_bot(self) -> None:
+    def run_realtor_scraper(self) -> None:
         self.get_search_information()
         self.confirm_user_input()
         data = self.get_realtor_listings()
         self.data_formatter.format_realtor_dot_com_data(data, self.date)
 
-    def run_trulia_bot(self) -> None:
+    def run_trulia_scraper(self) -> None:
         self.get_search_information()
         self.confirm_user_input()
         data = self.get_trulia_listings()
         self.data_formatter.format_trulia_data(data, self.date)
 
-    def run_homes_bot(self) -> None:
+    def run_homes_scraper(self) -> None:
         self.get_search_information()
         self.confirm_user_input()
         data = self.get_homes_listings()
