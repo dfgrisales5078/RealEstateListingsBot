@@ -9,7 +9,7 @@ if __name__ == '__main__':
                                   '\nor press enter to quit.\n'
                                   '\nEnter your selection: ')
 
-        if website_selection == ''
+        if website_selection == '':
             exit(0)
 
         facade = Facade()
