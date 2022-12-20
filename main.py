@@ -5,10 +5,11 @@ if __name__ == '__main__':
         website_selection = input('Please make a website to search: '
                                   '\npress 1 to search realtor.com '
                                   '\npress 2 to search trulia.com '
-                                  '\npress 3 to search homes.com\n'
-                                  '\nor press enter to quit.\n')
+                                  '\npress 3 to search homes.com'
+                                  '\nor press enter to quit.\n'
+                                  '\nEnter your selection: ')
 
-        if website_selection == '':
+        if website_selection == ''
             exit(0)
 
         facade = Facade()
